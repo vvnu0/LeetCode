@@ -1,5 +1,5 @@
 // Runtime:   0ms      [Beats 100% of users in Java]
-// Memory:    39.20 MB [Beats 39.40% of users in Java]
+// Memory:    39.05 MB [Beats 51.72% of users in Java]
 
 // https://leetcode.com/problems/integer-break/description/?envType=daily-question&envId=2023-10-06
 // Medium
@@ -7,14 +7,9 @@
 class Solution {
     public int integerBreak(int n) {
         switch (n){
-            case 2: 
-                return 1;
-            case 3:
-                return 2;
-            case 4:
-                return 4;
-            default:
-                break;
+            case 2: return 1;
+            case 3: return 2;
+            case 4: return 4;
         }
 
         int num3 = n/3;
