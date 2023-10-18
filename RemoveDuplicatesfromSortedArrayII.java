@@ -1,5 +1,5 @@
-// Runtime 0 ms
-// Memory 43.27 MB
+// Runtime:   0 ms     [Beats 100.00% of users with Java]
+// Memory:    43.27 MB [Beats 94.41%of users with Java]
 
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/submissions/
 // Medium
