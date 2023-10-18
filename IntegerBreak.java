@@ -1,5 +1,5 @@
-// Runtime 0ms
-// Memory 39.20 MB
+// Runtime:   0ms      [Beats 100% of users in Java]
+// Memory:    39.20 MB [Beats 39.40% of users in Java]
 
 // https://leetcode.com/problems/integer-break/description/?envType=daily-question&envId=2023-10-06
 // Medium
