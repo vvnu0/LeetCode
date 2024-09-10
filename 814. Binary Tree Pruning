@@ -1,0 +1,70 @@
+https://leetcode.com/problems/binary-tree-pruning/
+Smart way:
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def pruneTree(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: Optional[TreeNode]
+        """
+        if not root:
+            return None
+        
+        root.left = self.pruneTree(root.left)
+        root.right = self.pruneTree(root.right)
+
+        if not root.left and not root.right and root.val == 0:
+            return None
+        return root
+
+
+
+--------------------
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def dfs(self, root):
+        l, r = False, False
+
+        if root.left:
+            if not self.dfs(root.left):
+                root.left = None
+                l = False
+            else: l = True
+        if root.right:
+            if not self.dfs(root.right):
+                root.right = None
+                r = False
+            else: r = True
+        
+        # print(root.val)
+        # print("val:" + str((root.val == 1)) + " l:" + str(l) + " r:" + str(r))
+        return ((root.val == 1) or l or r)
+
+    def pruneTree(self, root):
+        if self.dfs(root):
+            return root
+        else: return None
+
+
+'''
+dfs to the bottom
+if theres a 1, then return true, go back up
+if theres a 0, return false
+
+up:
+if left or right are true, dont remove and return true
+else if they are both false, remove and return false
+
+return tree
+'''
+        
