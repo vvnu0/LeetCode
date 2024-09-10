@@ -1,0 +1,19 @@
+class Solution(object):
+    def summaryRanges(self, nums):
+        if not nums: return nums
+
+        nums.sort()
+        f, l = nums[0], None
+        res = []
+        
+        for i in range(1, len(nums)):
+            if (nums[i] == nums[i-1]+1): continue
+
+            if (f == nums[i-1]): res.append(str(f))
+            else: res.append(str(f) + "->" + str(nums[i-1]))
+
+            f = nums[i]
+
+        if (f == nums[-1]): res.append(str(f))
+        else: res.append(str(f) + "->" + str(nums[-1])) 
+        return res              
